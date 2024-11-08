@@ -38,4 +38,4 @@ class NotesService {
   }
 }
 
-export const 
+export const notesService = new NotesService();
