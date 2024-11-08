@@ -7,3 +7,11 @@ h1 {
     font-size: 2rem;
     color: #333;
 }
+
+#noteForm {
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
