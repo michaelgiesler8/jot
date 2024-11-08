@@ -19,4 +19,13 @@ class NotesService {
       appState.setActive(note);
     }
   }
+
+  saveActiveNote(body) {
+    const note = appState.activeNote;
+    if (note) {
+      note.body = body;
+      note.updatedAt = new Date();
+      appState.saveNotes();
+    }
+  }
 }
