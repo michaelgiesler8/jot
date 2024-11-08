@@ -16,3 +16,13 @@ class AppState extends EventEmitter {
   }
 }
 
+export const appState = new Proxy(new AppState(), {
+  get(target, prop) {
+    return target[prop];
+  },
+  set(target, prop, value) {
+    target[prop] = value;
+    target.emit(prop, value);
+    return true;
+  },
+});
