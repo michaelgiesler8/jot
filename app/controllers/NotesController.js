@@ -35,5 +35,11 @@ export class NotesController {
     form.reset();
   }
 
+  setActiveNote(id) {
+    notesService.setActiveNote(id);
+  }
+
+  save
+
 
 }
