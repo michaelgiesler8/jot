@@ -1,10 +1,7 @@
-import { EventEmitter } from './utils/EventEmitter.js'
-import { createObservableProxy } from './utils/ObservableProxy.js'
+import { EventEmitter } from "./utils/EventEmitter.js";
+import { Note } from "./models/Note.js";
+import { loadState, saveState } from "./utils/Store.js";
 
-class ObservableAppState extends EventEmitter {
-
-  /**@type {import('./models/Example.js').Example[]} */
-  examples = []
+class AppState extends EventEmitter {
+  notes
 }
-
-export const AppState = createObservableProxy(new ObservableAppState())
