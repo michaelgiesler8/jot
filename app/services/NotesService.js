@@ -28,4 +28,14 @@ class NotesService {
       appState.saveNotes();
     }
   }
+
+  deleteNoteById(id) {
+    if (confirm("Are you sure you want to delete this note?")) {
+      appState.notes = appState.notes.filter(note => note.id !== id);
+      appState.saveNotes();
+      appState.setActive(null);
+    }
+  }
 }
+
+export const 
