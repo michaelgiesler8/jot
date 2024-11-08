@@ -44,5 +44,8 @@ export class NotesController {
     notesService.saveActiveNote(body);
   }
 
-
+  deleteNote() {
+    const id = appState.activeNote.id;
+    notesService.deleteNoteById(id);
+  }
 }
