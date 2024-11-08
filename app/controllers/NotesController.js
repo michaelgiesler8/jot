@@ -18,3 +18,22 @@ function _drawActiveNote() {
   }
 }
 
+export class NotesController {
+  constructor() {
+    _drawNotesList();
+    _drawActiveNote();
+
+    appState.on("notes", _drawNotesList);
+    appState.on("activeNote", _drawActiveNote);
+  }
+
+  createNote() {
+    const form = document.getElementById("noteForm");
+    const formData = new FormData(form);
+    const noteData = Object.fromEntries(formData.entries());
+    notesService.createNote(noteData);
+    form.reset();
+  }
+
+
+}
