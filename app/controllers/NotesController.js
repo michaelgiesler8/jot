@@ -39,7 +39,10 @@ export class NotesController {
     notesService.setActiveNote(id);
   }
 
-  save
+  saveNote() {
+    const body = document.getElementById("noteBody").value;
+    notesService.saveActiveNote(body);
+  }
 
 
 }
