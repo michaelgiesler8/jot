@@ -9,3 +9,12 @@ function _drawNotesList() {
   document.getElementById("noteCount").innerHTML = notes.length;
 }
 
+function _drawActiveNote() {
+  const activeNote = appState.activeNote;
+  if (activeNote) {
+    document.getElementById("activeNote").innerHTML = activeNote.ActiveTemplate;
+  } else {
+    document.getElementById("activeNote").innerHTML = "<p class='text-muted'>Select a note to view it here.</p>";
+  }
+}
+
