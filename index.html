@@ -39,27 +39,69 @@
   </header>
 
   <!-- SECTION -->
-  <main>
-    <div class="container my-5">
-      <h1 class="text-center mb-4">Jot - Note Taking App</h1>
+  <div class="container my-5">
+    <h1 class="text-center mb-4">Jot - Note Taking App</h1>
+
+    <!-- Create Note Form -->
+    <form id="noteForm" class="p-3 mb-4 bg-light rounded shadow-sm"
+      onsubmit="app.notesController.createNote(); return false;">
+      <div class="row mb-3">
+        <div class="col-md-8">
+          <input type="text" name="title" class="form-control" placeholder="Note Title" minlength="3" maxlength="15"
+            required />
+        </div>
+        <div class="col-md-4">
+          <select name="color" class="form-select" required>
+            <option value="#ff6666" style="background-color: #ff6666;">Red</option>
+            <option value="#66b3ff" style="background-color: #66b3ff;">Blue</option>
+            <option value="#99ff99" style="background-color: #99ff99;">Green</option>
+            <option value="#ffff99" style="background-color: #ffff99;">Yellow</option>
+            <option value="#ffcc99" style="background-color: #ffcc99;">Peach</option>
+          </select>
+        </div>
+      </div>
+      <textarea name="body" class="form-control mb-3" placeholder="Start writing your note..." rows="4"
+        required></textarea>
+      <button type="submit" class="btn btn-primary w-100">Create Note</button>
+    </form>
+
+    <!-- Main layout -->
+    <div class="row">
+      <!-- Notes List -->
+      <aside class="col-md-4">
+        <h4>All Notes <span id="noteCount" class="badge bg-secondary">0</span></h4>
+        <ul id="notesList" class="list-group"></ul>
+      </aside>
+
+      <!-- Active Note View -->
+      <main id="activeNote" class="col-md-8">
+        <p class="text-muted">Select a note to view it here.</p>
+      </main>
     </div>
-  </main>
+  </div>
 
-  <!-- SECTION -->
-  <footer class="bg-dark text-light">
-    <div class="text-center no-select">
-      <p class="mb-0"><small>Made with 💖 by CodeWorks</small></p>
-    </div>
-  </footer>
+  <script type="module" src="App.js"></script>
+</body>
 
-  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
-    crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.3.10/dist/sweetalert2.all.min.js"
-    integrity="sha256-hw7v8jZF/rFEdx1ZHepT4D73AFTHLu/P9kEyrNesRyc=" crossorigin="anonymous"></script>
+</html>
 
-  <script src="app/App.js" type="module"></script>
+</div>
+</main>
+
+<!-- SECTION -->
+<footer class="bg-dark text-light">
+  <div class="text-center no-select">
+    <p class="mb-0"><small>Made with 💖 by CodeWorks</small></p>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
+  integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.3.10/dist/sweetalert2.all.min.js"
+  integrity="sha256-hw7v8jZF/rFEdx1ZHepT4D73AFTHLu/P9kEyrNesRyc=" crossorigin="anonymous"></script>
+
+<script src="app/App.js" type="module"></script>
 </body>
 
 </html>
