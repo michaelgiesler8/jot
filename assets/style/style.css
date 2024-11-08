@@ -15,3 +15,107 @@ h1 {
     border-radius: 0.5rem;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
+
+#noteForm button {
+    font-weight: bolder;
+}
+
+aside {
+    padding-right: 1.5rem;
+}
+
+#notesList {
+    max-height: 500px;
+    overflow-y: auto;
+}
+
+.list-group-item {
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.list-group-item:hover {
+    background-color: #f1f1f1;
+}
+
+.note-item .badge {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+}
+
+#activeNote {
+    border-left: 1px solid #ddd;
+    padding-left: 1.5rem;
+}
+
+.note-active {
+    background-color: #ffffff;
+    padding: 1.5rem;
+    border: 1px solid #ddd;
+    border-radius: 0.5rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.note-active h2 {
+    font-size: 1.5 rem;
+    margin-bottom: 1rem;
+}
+
+.note-active textarea {
+    height: 250px;
+    resize: none;
+    border: 1px solid #ddd;
+    border-radius: 0.25;
+}
+
+.note-active button {
+    margin-top: 0.5rem;
+}
+
+.note-active .btn-primary {
+    font-weight: bold;
+}
+
+.note-active .btn-danger {
+    background-color: #dc3545;
+    border-color: #dc3545;
+}
+
+.list-group-item .badge {
+    width: 1.2rem;
+    height: 1.2rem;
+    border-radius: 50%;
+}
+
+.badge[data-color] {
+    background-color: currentColor;
+}
+
+#notesList::-webkit-scrollbar {
+    width: 6px
+}
+
+#notesList::-webkit-scrollbar-thumb {
+    background-color: #cccccc;
+    border-radius: 10px;
+}
+
+#notesList::-webkit-scrollbar-track {
+    background-color: #f1f1f1;
+}
+
+@media (max-width: 768px) {
+    #app {
+        flex-direction: column;
+    }
+
+    aside {
+        padding: 0;
+    }
+
+    #activeNote {
+        padding: 0;
+        border: none;
+    }
+}
