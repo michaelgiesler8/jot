@@ -24,7 +24,7 @@ export class Note {
       <div class="p-3 border rounded" style="background-color: ${this.color}">
         <h2>${this.title}</h2>
         <p><small>Created: ${this.formatDate(this.createdAt)}</small></p>
-        <p><small>Last Updated: ${this.formatDate(this.updatedAt)}<
+        <p><small>Last Updated: ${this.formatDate(this.updatedAt)}</small></p>
         <textarea id="noteBody" class="form-control mb-3">${this.body}</textarea>
         <button class="btn btn-primary me-2" onclick="app.notesController.saveNote()">Save</button>
         <button class="btn btn-danger" onclick="app.notesController.deleteNote()">Delete</button>
