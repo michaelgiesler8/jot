@@ -1,3 +1,4 @@
+// App.js
 import { NotesController } from "./controllers/NotesController.js";
 
 class App {

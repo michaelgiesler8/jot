@@ -8,9 +8,8 @@ class NotesService {
       color: formData.color,
       body: formData.body
     });
-    appState.notes.push(newNote);
-    appState.saveNotes();
-    appState.setActive(newNote);
+    appState.addNote(newNote); // Use the new method to add and save the note
+    appState.setActive(newNote); // Set the new note as the active note
   }
 
   setActiveNote(id) {
@@ -25,15 +24,14 @@ class NotesService {
     if (note) {
       note.body = body;
       note.updatedAt = new Date();
-      appState.saveNotes();
+      appState.saveNotes(); // Save changes to local storage
     }
   }
 
   deleteNoteById(id) {
     if (confirm("Are you sure you want to delete this note?")) {
-      appState.notes = appState.notes.filter(note => note.id !== id);
-      appState.saveNotes();
-      appState.setActive(null);
+      appState.deleteNoteById(id); // Use the new method to delete and save the updated notes
+      appState.setActive(null); // Clear the active note if it was deleted
     }
   }
 }
