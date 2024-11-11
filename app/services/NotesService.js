@@ -15,7 +15,9 @@ class NotesService {
   setActiveNote(id) {
     const note = appState.notes.find(note => note.id === id);
     if (note) {
-      appState.setActive(note);
+      // appState.setActive(note);
+      appState.activeNote = note
+      appState.emit("activeNote")
     }
   }
 

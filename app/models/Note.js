@@ -6,8 +6,8 @@ export class Note {
     this.title = title;
     this.color = color;
     this.body = body;
-    this.createdAt = createdAt;
-    this.updatedAt = updatedAt;
+    this.createdAt = new Date(createdAt);
+    this.updatedAt = new Date(updatedAt);
   }
 
   get ListTemplate() {
@@ -26,5 +26,9 @@ export class Note {
         <button class="btn btn-primary me-2" onclick="app.notesController.saveNote()">Save</button>
         <button class="btn btn-danger" onclick="app.notesController.deleteNote()">Delete</button>
       </div>`;
+  }
+
+  formatDate(date) {
+    return date.toLocaleString();
   }
 }
