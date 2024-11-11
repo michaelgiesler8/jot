@@ -11,7 +11,7 @@ class NotesService {
       updatedAt: new Date()
     });
     appState.notes.push(newNote);
-    appState.addNote(newNote);
+    appState.saveNotes();
     appState.setActive(newNote);
   }
 
