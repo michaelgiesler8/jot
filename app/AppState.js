@@ -3,8 +3,7 @@ import { Note } from "./models/Note.js";
 import { loadState, saveState } from "./utils/Store.js";
 
 class AppState extends EventEmitter {
-  /** @type {Note[]} */
-  notes = loadState("notes", Note) || []; // Load notes from local storage or initialize with an empty array
+  notes = loadState("notes", Note) || [];
   activeNote = null;
 
   setActive(note) {
@@ -13,18 +12,18 @@ class AppState extends EventEmitter {
   }
 
   saveNotes() {
-    saveState("notes", this.notes); // Save notes array to local storage
+    saveState("notes", this.notes);
   }
 
   addNote(newNote) {
     this.notes.push(newNote);
-    this.saveNotes(); // Save to local storage each time a new note is added
-    this.emit("notes", this.notes); // Emit event to update UI
+    this.saveNotes();
+    this.emit("notes", this.notes);
   }
 
   deleteNoteById(id) {
     this.notes = this.notes.filter(note => note.id !== id);
-    this.saveNotes(); // Update local storage after deletion
+    this.saveNotes();
     this.emit("notes", this.notes);
   }
 }
