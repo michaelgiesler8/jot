@@ -10,8 +10,6 @@ class NotesService {
       createdAt: new Date(),
       updatedAt: new Date()
     });
-    appState.notes.push(newNote);
-    appState.saveNotes();
     appState.setActive(newNote);
   }
 
@@ -22,12 +20,12 @@ class NotesService {
     }
   }
 
-  saveActiveNote(body) {
+  saveActiveNoteToAllNotes(body) {
     const note = appState.activeNote;
     if (note instanceof Note) {
       note.body = body;
       note.updatedAt = new Date();
-      appState.saveNotes();
+      appState.addNote();
     }
   }
 

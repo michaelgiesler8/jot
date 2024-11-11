@@ -31,7 +31,7 @@ export class NotesController {
     const form = document.getElementById("noteForm");
     const formData = new FormData(form);
     const noteData = Object.fromEntries(formData.entries());
-    notesService.createNote(noteData);
+    notesService.createTemporaryNote(noteData);
     form.reset();
   }
 
@@ -41,7 +41,7 @@ export class NotesController {
 
   saveNote() {
     const body = document.getElementById("noteBody").value;
-    notesService.saveActiveNote(body);
+    notesService.saveActiveNoteToAllNotes(body);
   }
 
   deleteNote() {
